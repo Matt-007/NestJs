@@ -9,7 +9,7 @@ import {
   } from "typeorm";
   import { OrderEntity } from "./order.entity";
   
-  @Entity('deliveries', { schema: 'ventas' })
+  @Entity('deliveries', { schema: 'comida' })
   export class DeliveryEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;

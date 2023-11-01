@@ -2,7 +2,7 @@ import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn,
     Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { UserEntity } from "./user.entity";
 
-@Entity('addresses', { schema: 'ventas' })
+@Entity('addresses', { schema: 'comida' })
 export class AddressEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;

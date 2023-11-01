@@ -8,11 +8,11 @@ import {
     ManyToOne,
     JoinTable,
   } from "typeorm";
-  import { ProductEntity } from "./product.entity";
-  import { CategoryEntity } from "./category.entity";
+  import { ProductoEntity } from "./producto.entity";
+  import { CategoryEntity } from "./categoria.entity";
   import { AddressEntity } from "./address.entity"; 
   
-  @Entity('providers', { schema: 'ventas' })
+  @Entity('providers', { schema: 'comida' })
   export class ProviderEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -32,11 +32,11 @@ import {
     updateAt: Date;
   
     @Column('varchar', {
-      name: 'name',
+      name: 'provider',
       nullable: false,
       comment: 'provider name',
     })
-    name: string;
+    provider: string;
   
     @Column('varchar', {
       name: 'email',
@@ -46,8 +46,8 @@ import {
     })
     email: string;
   
-    @OneToMany(() => ProductEntity, product => product.provider)
-    products: ProductEntity[];
+    @OneToMany(() => ProductoEntity, product => product.provider)
+    products: ProductoEntity[];
   
     @OneToMany(() => CategoryEntity, category => category.provider)
     categories: CategoryEntity[];
@@ -61,21 +61,21 @@ import {
       nullable: true,
       comment: 'provider phone number',
     })
-    phoneNumber: string; // Corregí la definición de phoneNumber
+    phoneNumber: string; 
   
     @Column('text', {
       name: 'description',
       nullable: true,
       comment: 'provider description',
     })
-    description: string; // Corregí la definición de description
+    description: string; 
   
     @Column('boolean', {
       name: 'is_active',
       default: true,
       comment: 'true if the provider is active',
     })
-    isActive: boolean; // Corregí la definición de isActive
+    isActive: boolean; 
   
     @Column('varchar', {
       name: 'website',

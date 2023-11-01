@@ -1,9 +1,9 @@
 import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, 
     Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { UserEntity } from "./user.entity";
-import { ProductEntity } from "./product.entity";
+import { ProductoEntity } from "./producto.entity";
 
-@Entity('orders', { schema: 'ventas' })
+@Entity('orders', { schema: 'comida' })
 export class OrderEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -32,8 +32,8 @@ export class OrderEntity {
     @ManyToOne(() => UserEntity, user => user.orders)
     user: UserEntity;
 
-    @ManyToOne(() => ProductEntity, product => product.orders)
-    product: ProductEntity;
+    @ManyToOne(() => ProductoEntity, product => product.orders)
+    product: ProductoEntity;
     billings: any;
 
     @BeforeInsert()

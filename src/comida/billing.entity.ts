@@ -8,7 +8,7 @@ import {
   } from "typeorm";
   import { OrderEntity } from "./order.entity";
   
-  @Entity('billing', { schema: 'ventas' })
+  @Entity('billing', { schema: 'comida' })
   export class BillingEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;

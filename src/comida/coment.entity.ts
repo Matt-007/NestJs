@@ -1,9 +1,9 @@
 import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, 
     Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { UserEntity } from "./user.entity";
-import { ProductEntity } from "./product.entity";
+import { ProductoEntity } from "./producto.entity";
 
-@Entity('comments', { schema: 'ventas' })
+@Entity('comments', { schema: 'comida' })
 export class CommentEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -32,8 +32,8 @@ export class CommentEntity {
     @ManyToOne(() => UserEntity, user => user.comments)
     user: UserEntity;
 
-    @ManyToOne(() => ProductEntity, product => product.comments)
-    product: ProductEntity;
+    @ManyToOne(() => ProductoEntity, product => product.comments)
+    product: ProductoEntity;
 
     @BeforeInsert()
     @BeforeUpdate()
